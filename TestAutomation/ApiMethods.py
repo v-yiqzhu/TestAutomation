@@ -4,7 +4,9 @@
 """
 # the functions of api methods
 # 1. api_method_get  #
-# 2.
+# 2. api_method_delete
+# 3. api_method_post
+# 4. api_method_put
 """
 
 import requests
@@ -18,3 +20,12 @@ def api_method_get(url, headers):
         return True
     else:
         return False
+
+def api_method_delete(url, headers):
+    pass
+
+def api_method_post(url, headers):
+    pass
+
+def api_method_put(url, headers):
+    pass
