@@ -4,7 +4,9 @@
 """
 # the functions of api methods
 # 1. api_method_get  #
-# 2.
+# 2. api_method_delete
+# 3. api_method_post
+# 4. api_method_put
 """
 
 import requests
@@ -20,6 +22,7 @@ def api_method_get(url, headers):
         return False
 
 
+
 def api_method_delete(url,headers,body):
     response = requests.delete(url=url,headers=headers,body=body)
     response = response.json()
@@ -27,3 +30,18 @@ def api_method_delete(url,headers,body):
         return True
     else:
         return False
+
+def api_method_delete(url,headers,body):
+    response = requests.delete(url=url,headers=headers,body=body)
+    response = response.json()
+    if response['error_code'] == 0 and response['message'] == 'operation successful':
+        return True
+    else:
+        return False
+
+def api_method_post(url, headers):
+    pass
+
+def api_method_put(url, headers):
+    pass
+
