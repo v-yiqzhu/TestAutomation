@@ -31,8 +31,13 @@ def api_method_delete(url, headers):
         return False
 
 
-def api_method_post(url, headers):
-    pass
+def api_method_post(url, headers, body):
+    response = requests.post(url=url, headers=headers, json=body)
+    response = response.json()
+    if response['error_code'] == 0 and response['message'] == 'operation successful':
+        return True
+    else:
+        return False
 
 
 def api_method_put(url, headers):
