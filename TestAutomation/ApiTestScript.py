@@ -14,7 +14,7 @@ import ApiMethods
 import json
 
 # get work book by file path, and file name
-TestCasePath = r'C:\code\pyProject\TestAutomation\ApiTestCases\ApiTestCase_1.xlsx'
+TestCasePath = r'D:\test\TestAutomation\TestAutomation\ApiTestCases\ApiTestCase_1.xlsx'
 workbook = openpyxl.load_workbook(filename=TestCasePath)
 
 # get work sheet by sheet name "TestCase"
