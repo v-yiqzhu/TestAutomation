@@ -22,26 +22,18 @@ def api_method_get(url, headers):
         return False
 
 
-
-def api_method_delete(url,headers,body):
-    response = requests.delete(url=url,headers=headers,body=body)
+def api_method_delete(url, headers):
+    response = requests.delete(url=url, headers=headers)
     response = response.json()
     if response['error_code'] == 0 and response['message'] == 'operation successful':
         return True
     else:
         return False
 
-def api_method_delete(url,headers,body):
-    response = requests.delete(url=url,headers=headers,body=body)
-    response = response.json()
-    if response['error_code'] == 0 and response['message'] == 'operation successful':
-        return True
-    else:
-        return False
 
 def api_method_post(url, headers):
     pass
 
+
 def api_method_put(url, headers):
     pass
-
