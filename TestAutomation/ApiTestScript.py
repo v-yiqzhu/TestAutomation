@@ -38,7 +38,16 @@ for row in worksheet.iter_rows(min_row=2, max_col=len(worksheet[1]), max_row=len
     elif row[3].value == 'POST':
         pass
     elif row[3].value == 'DELETE':
-        pass
+        if row[5].value:
+            url = 'https://' + row[4].value + row[5].value
+        else:
+            url = 'https://' + row[5].value
+        headers = json.loads(row[6].value)
+        body = json.loads(row[7].value)
+        if ApiMethods.api_method_delete(url, headers, body):
+            print("{} test passed".format(row[0].value))
+        else:
+            print("{} test failed".format(row[0].value))
     elif row[3].value == 'PUT':
         pass
     else:
